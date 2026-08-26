@@ -1,700 +1,869 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width initial-scale=1" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Riti Singh is a Dartmouth Electrical & Computer Engineering student building intelligent systems across software, embedded hardware, digital design, and engineering validation." />
+  <meta name="author" content="Riti Singh" />
+  <meta name="theme-color" content="#07111f" />
 
-  <!-- Materialize - Compiled and minified CSS -->
-  <link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/css/materialize.min.css" />
-  <!-- Font Awesome Icon - CSS -->
-  <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" />
-  <!-- Custom Styles -->
-  <link rel="stylesheet" href="/assets/css/style.css" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Riti Singh | Electrical & Computer Engineering" />
+  <meta property="og:description" content="Software, embedded systems, digital hardware, and engineering automation." />
+  <meta property="og:url" content="https://riti-singh.github.io/" />
+  <meta property="og:image" content="https://riti-singh.github.io/assets/img/preview.jpg" />
 
   <title>Riti Singh | Electrical & Computer Engineering</title>
 
-  <!-- Primary SEO -->
-  <meta name="author" content="Riti Singh" />
-  <meta name="description"
-    content="Dartmouth ECE ’27 building embedded systems, digital hardware (VHDL/FPGA), and hardware-software integrated prototypes with a validation-first mindset." />
-  <meta name="robots" content="index, follow" />
-
-  <!-- Open Graph -->
-  <meta property="og:locale" content="en_US" />
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Riti Singh | Electrical & Computer Engineering" />
-  <meta property="og:description" content="Embedded systems • FPGA/VHDL • hardware-software integration • test & validation" />
-  <meta property="og:url" content="https://riti-singh.github.io/" />
-  <meta property="og:site_name" content="Riti Singh | ECE" />
-  <!-- Replace preview image after you add one -->
-  <meta property="og:image" content="https://riti-singh.github.io/assets/img/preview.jpg" />
-
-  <!-- Twitter -->
-  <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Riti Singh | Electrical & Computer Engineering" />
-  <meta name="twitter:description" content="Embedded systems • FPGA/VHDL • hardware-software integration • test & validation" />
-  <meta name="twitter:url" content="https://riti-singh.github.io/" />
-
-  <!-- Favicons (keep these if you keep the assets) -->
-  <link rel="apple-touch-icon" sizes="57x57" href="/assets/img/favicon/apple-icon-57x57.png" />
-  <link rel="apple-touch-icon" sizes="60x60" href="/assets/img/favicon/apple-icon-60x60.png" />
-  <link rel="apple-touch-icon" sizes="72x72" href="/assets/img/favicon/apple-icon-72x72.png" />
-  <link rel="apple-touch-icon" sizes="76x76" href="/assets/img/favicon/apple-icon-76x76.png" />
-  <link rel="apple-touch-icon" sizes="114x114" href="/assets/img/favicon/apple-icon-114x114.png" />
-  <link rel="apple-touch-icon" sizes="120x120" href="/assets/img/favicon/apple-icon-120x120.png" />
-  <link rel="apple-touch-icon" sizes="144x144" href="/assets/img/favicon/apple-icon-144x144.png" />
-  <link rel="apple-touch-icon" sizes="152x152" href="/assets/img/favicon/apple-icon-152x152.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/assets/img/favicon/apple-icon-180x180.png" />
-  <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon/android-icon-192x192.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon/favicon-32x32.png" />
-  <link rel="icon" type="image/png" sizes="96x96" href="/assets/img/favicon/favicon-96x96.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="/assets/img/favicon/favicon-16x16.png" />
-  <link rel="manifest" href="/assets/img/favicon/manifest.json" />
-  <meta name="msapplication-TileColor" content="#ffffff" />
-  <meta name="msapplication-TileImage" content="/assets/img/favicon/ms-icon-144x144.png" />
-  <meta name="theme-color" content="#ffffff" />
-
-  <!-- === Theme override: teal/green -> soft lavender/pink ===
-       This lets you keep the template's existing 'teal' classes.
-       You can tweak these hex values anytime. -->
   <style>
-    .teal {
-      background-color: #E9D5FF !important;
-      /* lavender */
+    :root {
+      --ink: #07111f;
+      --ink-2: #0b1728;
+      --panel: #0f1d31;
+      --panel-2: #13243b;
+      --text: #f7fbff;
+      --muted: #9db0c5;
+      --line: rgba(148, 178, 210, 0.16);
+      --blue: #5b8cff;
+      --cyan: #4ed8e8;
+      --soft-blue: #b9cdff;
+      --white-panel: #f5f8fc;
+      --dark-text: #102033;
+      --dark-muted: #5f7083;
+      --max: 1180px;
+      --radius: 22px;
+      --shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
     }
 
-    .teal-text {
-      color: #A855F7 !important;
-      /* purple */
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background: var(--ink);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
     }
 
-    .teal.darken-2 {
-      background-color: #D8B4FE !important;
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    .shell {
+      width: min(var(--max), calc(100% - 44px));
+      margin: 0 auto;
     }
 
-    .teal.darken-3 {
-      background-color: #C4B5FD !important;
+    .nav-wrap {
+      position: fixed;
+      inset: 0 0 auto 0;
+      z-index: 100;
+      backdrop-filter: blur(18px);
+      background: rgba(7, 17, 31, 0.78);
+      border-bottom: 1px solid var(--line);
     }
 
-    a:hover {
-      color: #A855F7 !important;
+    .nav {
+      height: 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 22px;
     }
 
-    .btn,
-    .btn-floating {
-      background-color: #A855F7 !important;
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
-    .btn:hover,
-    .btn-floating:hover {
-      background-color: #9333EA !important;
+    .brand-mark {
+      width: 36px;
+      height: 36px;
+      border-radius: 11px;
+      display: grid;
+      place-items: center;
+      color: #06121f;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+      box-shadow: 0 0 30px rgba(78, 216, 232, 0.2);
+      font-size: 0.82rem;
+      letter-spacing: 0;
     }
 
-    /* Make the typing accent a lighter lavender */
-    .typing {
-      color: #E9D5FF !important;
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      color: var(--muted);
+      font-size: 0.94rem;
+      font-weight: 650;
     }
 
-    /* Optional: soften icon buttons (if your CSS uses borders) */
-    .icon-btn {
-      border-color: #E9D5FF !important;
+    .nav-links a { transition: color .2s ease; }
+    .nav-links a:hover { color: var(--text); }
+
+    .resume-link {
+      padding: 9px 14px;
+      border-radius: 999px;
+      color: var(--text) !important;
+      border: 1px solid rgba(91, 140, 255, 0.44);
+      background: rgba(91, 140, 255, 0.08);
+    }
+
+    .hero {
+      position: relative;
+      min-height: 92vh;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      padding: 130px 0 80px;
+    }
+
+    .hero::before,
+    .hero::after {
+      content: "";
+      position: absolute;
+      border-radius: 999px;
+      filter: blur(10px);
+      pointer-events: none;
+    }
+
+    .hero::before {
+      width: 520px;
+      height: 520px;
+      top: -170px;
+      right: -110px;
+      background: radial-gradient(circle, rgba(91, 140, 255, .21), rgba(91, 140, 255, 0) 70%);
+    }
+
+    .hero::after {
+      width: 500px;
+      height: 500px;
+      left: -210px;
+      bottom: -250px;
+      background: radial-gradient(circle, rgba(78, 216, 232, .13), rgba(78, 216, 232, 0) 70%);
+    }
+
+    .hero-grid {
+      position: relative;
+      z-index: 2;
+      display: grid;
+      grid-template-columns: minmax(0, 1.28fr) minmax(300px, .72fr);
+      align-items: end;
+      gap: 70px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      margin-bottom: 22px;
+      color: var(--cyan);
+      font-weight: 750;
+      font-size: .9rem;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 36px;
+      height: 1px;
+      background: var(--cyan);
+    }
+
+    h1 {
+      max-width: 860px;
+      margin: 0;
+      font-size: clamp(3.8rem, 8vw, 7.4rem);
+      line-height: .92;
+      letter-spacing: -.065em;
+      font-weight: 800;
+    }
+
+    .gradient-text {
+      color: transparent;
+      background: linear-gradient(100deg, #f8fbff 5%, #9bb8ff 50%, #66dce9 95%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .hero-copy {
+      max-width: 760px;
+      margin: 30px 0 0;
+      color: #b5c5d7;
+      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-top: 34px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 12px;
+      border: 1px solid var(--line);
+      font-weight: 750;
+      font-size: .95rem;
+      transition: transform .2s ease, border-color .2s ease, background .2s ease;
+    }
+
+    .button:hover { transform: translateY(-2px); }
+    .button.primary {
+      color: #07111f;
+      border-color: transparent;
+      background: linear-gradient(135deg, var(--blue), var(--cyan));
+    }
+    .button.secondary { color: var(--text); background: rgba(255,255,255,.025); }
+    .button.secondary:hover { border-color: rgba(78, 216, 232, .45); }
+
+    .hero-side {
+      padding: 26px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: linear-gradient(180deg, rgba(19, 36, 59, .8), rgba(11, 23, 40, .62));
+      box-shadow: var(--shadow);
+    }
+
+    .hero-side .label {
+      color: var(--muted);
+      font-size: .78rem;
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      font-weight: 750;
+    }
+
+    .focus-list {
+      display: grid;
+      gap: 0;
+      margin-top: 8px;
+    }
+
+    .focus-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .focus-row:last-child { border-bottom: 0; }
+    .focus-row span:first-child { font-weight: 720; }
+    .focus-row span:last-child { color: var(--muted); font-size: .88rem; text-align: right; }
+
+    section { padding: 100px 0; }
+
+    .light-section {
+      background: var(--white-panel);
+      color: var(--dark-text);
+    }
+
+    .section-head {
+      display: grid;
+      grid-template-columns: .55fr 1.45fr;
+      gap: 50px;
+      align-items: start;
+      margin-bottom: 46px;
+    }
+
+    .section-kicker {
+      color: var(--blue);
+      text-transform: uppercase;
+      letter-spacing: .12em;
+      font-size: .82rem;
+      font-weight: 800;
+    }
+
+    .section-title {
+      margin: 6px 0 0;
+      font-size: clamp(2.3rem, 4vw, 4rem);
+      line-height: 1.04;
+      letter-spacing: -.045em;
+    }
+
+    .section-intro {
+      margin: 5px 0 0;
+      max-width: 720px;
+      color: var(--dark-muted);
+      font-size: 1.08rem;
+    }
+
+    .dark-intro { color: var(--muted); }
+
+    .experience-list {
+      display: grid;
+      gap: 18px;
+    }
+
+    .experience-card {
+      position: relative;
+      display: grid;
+      grid-template-columns: 210px minmax(0, 1fr);
+      gap: 30px;
+      padding: 30px;
+      border: 1px solid #dbe5ef;
+      border-radius: 20px;
+      background: #ffffff;
+      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+    }
+
+    .experience-card:hover {
+      transform: translateY(-3px);
+      border-color: #bfd1e5;
+      box-shadow: 0 22px 45px rgba(34, 61, 91, .09);
+    }
+
+    .company {
+      font-weight: 820;
+      font-size: 1.05rem;
+      letter-spacing: -.01em;
+    }
+    .meta { margin-top: 5px; color: #6c7f92; font-size: .9rem; }
+    .role { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; }
+
+    .experience-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: #45586b;
+    }
+    .experience-card li + li { margin-top: 7px; }
+
+    .project-grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 18px;
+    }
+
+    .project {
+      position: relative;
+      overflow: hidden;
+      min-height: 340px;
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: 22px;
+      background:
+        radial-gradient(circle at 100% 0%, rgba(91, 140, 255, .12), transparent 34%),
+        linear-gradient(180deg, rgba(19, 36, 59, .92), rgba(11, 23, 40, .94));
+      transition: transform .22s ease, border-color .22s ease;
+    }
+
+    .project:hover {
+      transform: translateY(-4px);
+      border-color: rgba(78, 216, 232, .35);
+    }
+
+    .project.large { grid-column: span 7; }
+    .project.medium { grid-column: span 5; }
+    .project.half { grid-column: span 6; }
+
+    .project-number {
+      color: rgba(157, 176, 197, .52);
+      font-size: .76rem;
+      letter-spacing: .14em;
+      font-weight: 800;
+    }
+
+    .project h3 {
+      max-width: 620px;
+      margin: 20px 0 12px;
+      font-size: clamp(1.6rem, 2.6vw, 2.35rem);
+      line-height: 1.08;
+      letter-spacing: -.035em;
+    }
+
+    .project p {
+      margin: 0;
+      max-width: 690px;
+      color: #a9bbce;
+      font-size: .98rem;
+    }
+
+    .project-metric {
+      display: inline-flex;
+      margin-top: 21px;
+      color: #dce8f5;
+      font-weight: 780;
+      font-size: .9rem;
+    }
+
+    .tags {
+      position: absolute;
+      left: 28px;
+      right: 28px;
+      bottom: 26px;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .tag {
+      padding: 6px 9px;
+      border-radius: 999px;
+      border: 1px solid rgba(157, 176, 197, .16);
+      background: rgba(255,255,255,.035);
+      color: #c4d3e2;
+      font-size: .77rem;
+      font-weight: 680;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 14px;
+    }
+
+    .skill-group {
+      padding: 23px;
+      border: 1px solid #dbe5ef;
+      border-radius: 18px;
+      background: white;
+    }
+
+    .skill-group h3 { margin: 0 0 12px; font-size: 1rem; }
+    .skill-group p { margin: 0; color: var(--dark-muted); font-size: .93rem; line-height: 1.7; }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.3fr .7fr;
+      gap: 70px;
+      align-items: start;
+    }
+
+    .about-copy {
+      color: #b7c7d8;
+      font-size: 1.15rem;
+      line-height: 1.85;
+    }
+    .about-copy p:first-child { margin-top: 0; }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+    }
+
+    .stat {
+      padding: 20px;
+      border: 1px solid var(--line);
+      border-radius: 18px;
+      background: rgba(255,255,255,.025);
+    }
+    .stat strong {
+      display: block;
+      font-size: 1.7rem;
+      line-height: 1;
+      letter-spacing: -.04em;
+      color: var(--soft-blue);
+    }
+    .stat span { display: block; margin-top: 8px; color: var(--muted); font-size: .83rem; }
+
+    .education-card {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 30px;
+      align-items: center;
+      padding: 30px;
+      border-radius: 20px;
+      background: #fff;
+      border: 1px solid #dbe5ef;
+    }
+    .education-card h3 { margin: 0; font-size: 1.45rem; }
+    .education-card p { margin: 8px 0 0; color: var(--dark-muted); }
+    .gpa { font-weight: 820; color: var(--dark-text); white-space: nowrap; }
+
+    .contact {
+      position: relative;
+      text-align: center;
+      overflow: hidden;
+    }
+    .contact h2 {
+      max-width: 880px;
+      margin: 0 auto;
+      font-size: clamp(2.7rem, 6vw, 5.5rem);
+      line-height: .98;
+      letter-spacing: -.055em;
+    }
+    .contact p {
+      max-width: 650px;
+      margin: 22px auto 0;
+      color: var(--muted);
+      font-size: 1.06rem;
+    }
+    .contact-links {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 11px;
+      margin-top: 30px;
+    }
+
+    footer {
+      padding: 26px 0 38px;
+      color: #7890a7;
+      text-align: center;
+      font-size: .83rem;
+    }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(14px);
+      transition: opacity .55s ease, transform .55s ease;
+    }
+    .reveal.visible { opacity: 1; transform: none; }
+
+    @media (max-width: 940px) {
+      .nav-links a:not(.resume-link) { display: none; }
+      .hero-grid,
+      .section-head,
+      .about-grid { grid-template-columns: 1fr; }
+      .hero-grid { gap: 38px; }
+      .section-head { gap: 18px; }
+      .experience-card { grid-template-columns: 1fr; gap: 18px; }
+      .project.large,
+      .project.medium,
+      .project.half { grid-column: span 12; }
+      .skills-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+
+    @media (max-width: 620px) {
+      .shell { width: min(var(--max), calc(100% - 28px)); }
+      .nav { height: 64px; }
+      .hero { padding-top: 108px; min-height: auto; }
+      h1 { font-size: clamp(3.3rem, 17vw, 5rem); }
+      section { padding: 76px 0; }
+      .skills-grid,
+      .stats { grid-template-columns: 1fr; }
+      .education-card { grid-template-columns: 1fr; }
+      .project { min-height: 390px; }
+      .hero-side { padding: 20px; }
     }
   </style>
 </head>
 
 <body>
-  <!-- Navigation Menu -->
-  <!-- Nav class 1 -->
-  <nav class="hide-on-small-only">
-    <ul class="side-nav fixed section table-of-contents">
-
-      <li class="logo">
-        <a id="logo-container" aria-label="Navigate to the beginning of the page" href="#intro"
-          class="brand-logo grey-blue-text">
-          <!-- Replace this image with your headshot; easiest: upload your headshot as assets/img/passport-new.jpg -->
-          <img src="/assets/img/passport-new.jpg" class="circle img-responsive profile-pic" alt="Riti Singh headshot">
-        </a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-
-      <li class="bold">
-        <!-- Upload your resume PDF to: assets/resume/Riti_Singh_Resume.pdf -->
-        <a aria-label="Open Riti's resume in a new tab" href="/assets/resume/Riti_Singh_Resume.pdf" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
-
-  <!-- Nav class 2 (mobile top bar) -->
-  <nav class="hide-on-large only trigger z-depth-1">
-    <a aria-label="Toggle visibility of the mobile navbar" href="#" data-activates="slide-out"
-      class="button-collapse"><i class="mdi-navigation-menu"></i></a>
-    <div class="name-title">
-      <a id="name" aria-label="Navigate to the beginning of the page" href="#" class="teal-text">Riti Singh</a>
-      <span class="black-text">Electrical &amp; Computer Engineering</span>
+  <header class="nav-wrap">
+    <div class="shell nav">
+      <a class="brand" href="#top" aria-label="Back to top">
+        <span class="brand-mark">RS</span>
+        <span>Riti Singh</span>
+      </a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#skills">Skills</a>
+        <a href="#about">About</a>
+        <a class="resume-link" href="/assets/resume/Riti_Singh_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+      </nav>
     </div>
-  </nav>
+  </header>
 
-  <!-- Nav class 3 (mobile side nav) -->
-  <nav class="hide-on-large only">
-    <ul id="slide-out" class="side-nav">
-      <li class="bold">
-        <a aria-label="Navigate to the About section" href="#about" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-person small"></i><span>About</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Experience section" href="#experience"
-          class="waves-effect waves-dark teal-text"><i class="mdi-action-trending-up small"></i><span>Experience</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Projects section" href="#projects" class="waves-effect waves-dark teal-text"><i
-            class="mdi-av-my-library-books small"></i><span>Projects</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Skills section" href="#skills" class="waves-effect waves-dark teal-text"><i
-            class="mdi-action-assessment small"></i><span>Skills</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Education section" href="#education" class="waves-effect waves-dark teal-text"><i
-            class="mdi-social-school small"></i><span>Education</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Navigate to the Contact section" href="#contact" class="waves-effect waves-dark teal-text"><i
-            class="mdi-content-mail small"></i><span>Contact</span></a>
-      </li>
-      <li class="bold">
-        <a aria-label="Open Riti's resume in a new tab" href="/assets/resume/Riti_Singh_Resume.pdf" target="_blank"
-          class="waves-effect waves-dark teal-text"><i class="mdi-file-folder-open small"></i><span>Resume</span></a>
-      </li>
-    </ul>
-  </nav>
+  <main id="top">
+    <section class="hero">
+      <div class="shell hero-grid">
+        <div>
+          <div class="eyebrow">Electrical &amp; Computer Engineering · Dartmouth '27</div>
+          <h1>I build systems that connect <span class="gradient-text">software to the physical world.</span></h1>
+          <p class="hero-copy">
+            My work spans wireless engineering automation, embedded control, digital hardware, signal processing, and system validation. I care about turning technically complex systems into reliable tools that solve concrete engineering problems.
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#projects">Explore projects ↓</a>
+            <a class="button secondary" href="mailto:riti.k.singh.27@dartmouth.edu">riti.k.singh.27@dartmouth.edu</a>
+            <a class="button secondary" href="https://www.linkedin.com/in/riti-k-singh/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          </div>
+        </div>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Intro -->
-    <section id="intro" class="section scrollspy full-height">
-      <div class="overlay"></div>
-      <div class="container">
-        <div class="col-md-9">
-          <div class="content section-padding valign" style="margin-left: 10%; margin-top: 50px;">
-            <div class="caption">
-              <h2>Hi, I'm <span class="teal">Riti Singh.</span></h2>
-              <h5 style="color:#fff">I build <span class="typing" style="font-weight: 300;"></span></h5>
-              <h5>
-                Dartmouth Electrical &amp; Computer Engineering (’27) with hands-on experience across embedded firmware, digital hardware,
-                and hardware-software integration. I like problems where timing, measurements, and real-world constraints matter—from motor
-                control and sensing to verification and debugging.
-              </h5>
+        <aside class="hero-side reveal" aria-label="Current technical focus">
+          <div class="label">Current technical range</div>
+          <div class="focus-list">
+            <div class="focus-row"><span>Engineering software</span><span>Python · AWS · FastAPI</span></div>
+            <div class="focus-row"><span>Embedded systems</span><span>C/C++ · STM32 · controls</span></div>
+            <div class="focus-row"><span>Digital hardware</span><span>FPGA · VHDL · verification</span></div>
+            <div class="focus-row"><span>Validation</span><span>testing · failure analysis</span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section id="experience" class="light-section">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Experience</div>
+            <h2 class="section-title">Built across the stack, from test infrastructure to embedded hardware.</h2>
+          </div>
+          <p class="section-intro">
+            The common thread is systems work: understanding a messy technical problem, identifying what engineers actually need, and building something robust enough to be useful.
+          </p>
+        </div>
+
+        <div class="experience-list">
+          <article class="experience-card reveal">
+            <div>
+              <div class="company">EchoStar · Boost Mobile</div>
+              <div class="meta">Denver, CO · Summer 2026</div>
             </div>
-
-            <div class="social">
-              <a href="https://www.linkedin.com/in/riti-k-singh/" target="_blank" aria-label="Riti on LinkedIn">
-                <button class="icon-btn linkedin">
-                  <i class="fa fa-linkedin"></i>
-                </button>
-              </a>
-              <a href="https://github.com/riti-singh" target="_blank" aria-label="Riti on GitHub">
-                <button class="icon-btn github">
-                  <i class="fa fa-github"></i>
-                </button>
-              </a>
+            <div>
+              <h3 class="role">Platform Engineering — AI &amp; Automation Intern</h3>
+              <ul>
+                <li>Developed an engineering automation platform for wireless device testing, automating requirements management, test workflows, and technical knowledge retrieval with benchmarking projecting a <strong>95% reduction in workflow time and manual effort</strong>.</li>
+                <li>Built a GraphRAG system connecting <strong>12,000+ specification nodes, 606 device requirements, and 728 test cases</strong> to improve engineering analysis and traceability.</li>
+                <li>Developed production services with Python, FastAPI, AWS Bedrock, SageMaker, Neptune, Neo4j, Boto3, and Pandas.</li>
+                <li>Worked with subject-matter experts and OEM teams to identify requirements-traceability gaps, test-case redundancy, and documentation bottlenecks; translated those needs into the platform architecture and features.</li>
+              </ul>
             </div>
+          </article>
 
-            <div class='buttons'>
-              <a href="#projects" class="readme">View Projects</a>
-              <a href="#contact" class="contactme">Contact</a>
+          <article class="experience-card reveal">
+            <div>
+              <div class="company">EvergreenAI</div>
+              <div class="meta">Hanover, NH · Sep 2025 – Jun 2026</div>
             </div>
+            <div>
+              <h3 class="role">Project Assistant — AI Engineering</h3>
+              <ul>
+                <li>Evaluated production AI systems through structured validation, failure-mode analysis, and edge-case testing in a regulated deployment environment.</li>
+                <li>Developed evaluation datasets and testing workflows to measure reliability and consistency, partnering with engineers and stakeholders to identify failure patterns and improve production readiness.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card reveal">
+            <div>
+              <div class="company">Smart Sort</div>
+              <div class="meta">Hanover, NH · Mar 2024 – Sep 2025</div>
+            </div>
+            <div>
+              <h3 class="role">Electrical &amp; Circuits Lead · Business Lead</h3>
+              <ul>
+                <li>Led electrical architecture for an award-winning autonomous waste-sorting platform integrating embedded sensing, microcontrollers, and electromechanical automation.</li>
+                <li>Designed embedded control systems coordinating weight sensing, metal detection, servo control, and power electronics while balancing reliability, manufacturability, power, and cost.</li>
+                <li>Received the <strong>Philip R. Jackson Award for Innovation</strong> for technical and entrepreneurial contributions.</li>
+              </ul>
+            </div>
+          </article>
+
+          <article class="experience-card reveal">
+            <div>
+              <div class="company">Dartmouth · EE Just Fellowship</div>
+              <div class="meta">Hanover, NH · Summer 2024</div>
+            </div>
+            <div>
+              <h3 class="role">Research Fellow</h3>
+              <ul>
+                <li>Built automated Python data pipelines processing and analyzing <strong>10,000+ recommendation-system observations</strong> across multiple social media platforms.</li>
+                <li>Analyzed recommendation drift and instability using statistical methods and presented findings at university research forums and GenAI ethics discussions.</li>
+              </ul>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Selected work</div>
+            <h2 class="section-title">Projects with real technical depth.</h2>
+          </div>
+          <p class="section-intro dark-intro">
+            A mix of software, circuits, embedded control, digital systems, and device physics. The goal here is range without losing specificity.
+          </p>
+        </div>
+
+        <div class="project-grid">
+          <article class="project large reveal">
+            <div class="project-number">01 · WIRELESS / PLATFORM ENGINEERING</div>
+            <h3>GraphRAG Engineering Platform for Wireless Test Automation</h3>
+            <p>Connected technical specifications, device requirements, and test cases into a context-aware engineering system. SME and OEM feedback shaped the architecture around traceability gaps, redundant testing, and high-friction documentation workflows rather than treating AI as the end goal.</p>
+            <span class="project-metric">12,000+ spec nodes · 606 requirements · 728 test cases</span>
+            <div class="tags">
+              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">AWS</span><span class="tag">GraphRAG</span><span class="tag">Neptune</span><span class="tag">Neo4j</span>
+            </div>
+          </article>
+
+          <article class="project medium reveal">
+            <div class="project-number">02 · ENGS 32 DESIGN PROJECT</div>
+            <h3>Intelligent Heartbeat Monitor + Class-D Audio System</h3>
+            <p>Designed a full signal chain from cardiac sensing and analog conditioning through timing logic, a 450 Hz tone path, PWM generation, break-before-make gate control, a MOSFET half-bridge, and LC-filtered speaker output. Validated subsystem behavior in LTspice and on the oscilloscope, then demonstrated operation on a real heartbeat.</p>
+            <div class="tags">
+              <span class="tag">Analog circuits</span><span class="tag">555 timing</span><span class="tag">PWM</span><span class="tag">Class-D</span><span class="tag">LTspice</span><span class="tag">Oscilloscope</span>
+            </div>
+          </article>
+
+          <article class="project medium reveal">
+            <div class="project-number">03 · EMBEDDED SYSTEMS</div>
+            <h3>STM32 Marble Maze Motion Controller</h3>
+            <p>Built an embedded controller for a multi-axis marble maze using joystick input, stepper actuation, sensor interfaces, and state-based control. The project emphasized timer-driven behavior, hardware integration, debugging, and reliable real-time interaction.</p>
+            <div class="tags">
+              <span class="tag">STM32</span><span class="tag">C</span><span class="tag">PWM</span><span class="tag">ADC</span><span class="tag">I²C</span><span class="tag">State machines</span>
+            </div>
+          </article>
+
+          <article class="project large reveal">
+            <div class="project-number">04 · DIGITAL SYSTEMS / FPGA</div>
+            <h3>FPGA MIDI Receiver + Verified Digital Control Logic</h3>
+            <p>Implemented UART receive, baud timing, parsing, finite-state control, and datapath logic in VHDL on the Basys3 platform. Used modular design and simulation/testbenches to verify timing-sensitive behavior before hardware integration.</p>
+            <div class="tags">
+              <span class="tag">VHDL</span><span class="tag">FPGA</span><span class="tag">UART</span><span class="tag">FSMs</span><span class="tag">Datapaths</span><span class="tag">Testbenches</span>
+            </div>
+          </article>
+
+          <article class="project half reveal">
+            <div class="project-number">05 · SEMICONDUCTOR PHYSICS · COURSEWORK</div>
+            <h3>Semiconductor Device Modeling &amp; Band-Diagram Analysis</h3>
+            <p>Analyzed pn junctions and MOS structures using doping profiles, depletion approximations, built-in potential, electric fields, capacitance, oxide thickness, and energy-band bending. Translated device equations into quantitative models and physically consistent band diagrams across bias conditions.</p>
+            <div class="tags">
+              <span class="tag">pn junctions</span><span class="tag">MOS</span><span class="tag">band diagrams</span><span class="tag">depletion</span><span class="tag">device physics</span>
+            </div>
+          </article>
+
+          <article class="project half reveal">
+            <div class="project-number">06 · ELECTROMECHANICAL SYSTEMS</div>
+            <h3>Smart Sort — Autonomous Material Classification</h3>
+            <p>Integrated load-cell sensing, inductive metal detection, microcontroller decision logic, servo actuation, and power electronics into an autonomous sorting prototype. Iterated the system around reliability, cost, power, and manufacturability rather than optimizing any one subsystem in isolation.</p>
+            <div class="tags">
+              <span class="tag">Microcontrollers</span><span class="tag">Sensors</span><span class="tag">Servo control</span><span class="tag">Power electronics</span><span class="tag">System integration</span>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="skills" class="light-section">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Technical toolkit</div>
+            <h2 class="section-title">Breadth, organized around systems.</h2>
+          </div>
+          <p class="section-intro">The skills section now matches the story the projects tell: software + systems, embedded + digital hardware, testing, and data/AI.</p>
+        </div>
+
+        <div class="skills-grid">
+          <div class="skill-group reveal">
+            <h3>Languages</h3>
+            <p>Python · C/C++ · Bash · SQL · MATLAB · VHDL</p>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Systems &amp; Embedded</h3>
+            <p>Linux · STM32 · microcontrollers · PWM · ADC · timers/interrupts · UART · I²C · hardware-software integration</p>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Cloud &amp; Backend</h3>
+            <p>AWS · FastAPI · REST APIs · Boto3 · Lambda · CloudWatch · SQL/NoSQL</p>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Data &amp; AI</h3>
+            <p>GraphRAG · RAG · LLMs · knowledge graphs · Bedrock · SageMaker · Neptune · Neo4j · Pandas</p>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Digital Hardware</h3>
+            <p>FPGA design · finite-state machines · datapaths · UART logic · simulation · testbenches · timing verification</p>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Circuits &amp; Devices</h3>
+            <p>Analog signal conditioning · filters · PWM/Class-D · power electronics · semiconductor device analysis · LTspice</p>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Testing &amp; Reliability</h3>
+            <p>Test automation · production validation · edge-case testing · failure-mode analysis · system troubleshooting · measurement-driven debugging</p>
+          </div>
+          <div class="skill-group reveal">
+            <h3>Developer Tools</h3>
+            <p>Git · Jira · Confluence · gcc/make · gdb · documentation · technical presentation</p>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- About -->
-    <section id="about" class="section scrollspy">
-      <h3 class="page-title white-text teal">About</h3>
-      <div class="container flow-text">
-        <p>
-          I’m an Electrical &amp; Computer Engineering student focused on building reliable systems at the intersection of hardware and firmware.
-          My experience spans STM32-based embedded control (PWM, ADC, timers/interrupts), I²C/UART communication, and modular driver development.
-          I also design and verify digital logic in VHDL (FSMs, datapaths, simulation/testbenches) and use MATLAB for modeling and data analysis.
-        </p>
-
-        <p>
-          I’m broadly interested in electrical engineering roles that emphasize strong fundamentals and real-world validation—embedded systems,
-          hardware integration, test/verification, controls, and instrumentation—where clear architecture and measurement-driven debugging make the difference.
-        </p>
-
-        <p>
-        <ul>
-          <li><b>Embedded:</b> STM32 microcontrollers, PWM control, ADC sensing, UART, I²C</li>
-          <li><b>Digital:</b> VHDL/Verilog, FPGA design, finite state machines, simulation/testbenches</li>
-          <li><b>Analysis:</b> MATLAB modeling + data analysis; systems &amp; controls foundations</li>
-          <li><b>Tools:</b> Git, gcc/make, gdb/valgrind; documentation and structured testing</li>
-        </ul>
-        </p>
-      </div>
-    </section>
-
-    <!-- Experience -->
-    <section id="experience" class="section scrollspy">
-      <h3 class="page-title white-text teal">Experience</h3>
-      <div class="container">
-
-        <!-- Smart Sort -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title">
-                    <a href="#projects" class="teal-text hoverline">Smart Sort</a>
-                  </span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Electrical Lead &amp; Business Lead</div>
-            <ul>
-              <li>Designed, tested, and iterated PCB layouts and embedded control circuitry for a sensor-driven waste-sorting prototype.</li>
-              <li>Integrated microcontrollers, sensors, and power systems with a focus on reliability, durability, and scalability in real environments.</li>
-              <li>Evaluated engineering trade-offs across power consumption, cost, and performance in collaboration with cross-functional stakeholders.</li>
-              <li><b>Focus:</b> hardware integration, reliability, validation mindset</li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Mar 2024 – Present | Hanover, NH</span>
+    <section id="about">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">About</div>
+            <h2 class="section-title">I like problems that cross boundaries.</h2>
           </div>
         </div>
 
-        <!-- EvergreenAI -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title">
-                    <a href="#projects" class="teal-text hoverline">EvergreenAI (Dartmouth College)</a>
-                  </span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">AI Systems &amp; Validation Team</div>
-            <ul>
-              <li>Participated in system validation and user testing of an AI-driven chatbot supporting student mental health services.</li>
-              <li>Generated structured training datasets and contributed to testing workflows to evaluate reliability and failure modes.</li>
-              <li>Presented analysis and findings to faculty and project stakeholders.</li>
-              <li><b>Focus:</b> validation workflows, test cases, failure analysis</li>
-            </ul>
+        <div class="about-grid">
+          <div class="about-copy reveal">
+            <p>I’m an Electrical &amp; Computer Engineering student at Dartmouth interested in systems where software, hardware, and real-world constraints all matter at once.</p>
+            <p>That has taken me from embedded control and FPGA design to analog signal processing, semiconductor devices, wireless test automation, and production AI systems. I’m most energized by work that requires both technical depth and the judgment to figure out what should actually be built.</p>
           </div>
-          <div class="card-action">
-            <span>Sept 2025 – Present | Hanover, NH</span>
+          <div class="stats reveal" aria-label="Selected highlights">
+            <div class="stat"><strong>3.76</strong><span>Dartmouth GPA</span></div>
+            <div class="stat"><strong>95%</strong><span>projected workflow time + manual-effort reduction at EchoStar</span></div>
+            <div class="stat"><strong>12K+</strong><span>specification nodes connected in wireless engineering platform</span></div>
+            <div class="stat"><strong>2nd</strong><span>EchoStar company-wide Intern Innovation Competition</span></div>
           </div>
-        </div>
-
-        <!-- EE Just -->
-        <div class="card">
-          <div class="card-content">
-            <div class="row">
-              <div class="col s12 m10">
-                <p>
-                  <span class="card-title">
-                    <a href="#projects" class="teal-text hoverline">EE Just Research Fellowship (Dartmouth College)</a>
-                  </span>
-                </p>
-              </div>
-            </div>
-            <div class="role brown-text text-darken-2">Research Fellow</div>
-            <ul>
-              <li>Built custom data collection pipelines using APIs and scraping tools to analyze large-scale recommendation systems.</li>
-              <li>Applied statistical and computational methods to identify bias and drift in algorithmic systems.</li>
-              <li>Presented technical findings at research seminars and applied ethics forums.</li>
-              <li><b>Focus:</b> data pipelines, analysis, reproducible methods</li>
-            </ul>
-          </div>
-          <div class="card-action">
-            <span>Jun 2024 – Sept 2024 | Hanover, NH</span>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="section scrollspy">
-      <h3 class="page-title white-text teal">Projects</h3>
-      <div class="container">
-        <div class="row">
-
-          <!-- Project 1 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Embedded control project" src="/assets/img/project-marble-maze.jpg"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Marble Maze — Embedded Motion Control<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>STM32-based multi-axis control with joystick input, sensors, and state logic.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Highlights</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Focus:</b> timers/interrupts, control logic, hardware integration</li>
-                  <li><b>Tech:</b> STM32, PWM/ADC, I²C, state machine</li>
-
-            
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit GitHub" href="https://github.com/riti-singh" target="_blank" data-position="top"
-                    data-tooltip="View GitHub"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 2 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Motor control project" src="/assets/img/project-motor-control.jpg"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">DC Motor Control + RPM Measurement<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>PWM speed control with optical RPM sensing and timer-based pulse counting.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Highlights</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Focus:</b> PWM generation, timer-based measurement, stability under noise</li>
-                  <li><b>Tech:</b> STM32, PWM, timers, sensor input</li>
-                  
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit GitHub" href="https://github.com/riti-singh" target="_blank" data-position="top"
-                    data-tooltip="View GitHub"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 3 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="I2C driver project" src="/assets/img/project-i2c-driver.jpg"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">I²C Device Driver Development<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>Register-level bring-up and robust I²C transactions for sensor communication.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Highlights</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Focus:</b> low-level transactions, error handling, validation tests</li>
-                  <li><b>Tech:</b> STM32, I²C, device registers</li>
-                  
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit GitHub" href="https://github.com/riti-singh" target="_blank" data-position="top"
-                    data-tooltip="View GitHub"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 4 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="VHDL project" src="/assets/img/project-vhdl.jpg"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">FPGA / Digital Design (VHDL)<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>Datapath + control modules with simulation-driven verification and timing discipline.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Highlights</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Focus:</b> FSMs, datapaths, testbenches, timing behavior</li>
-                  <li><b>Tech:</b> VHDL, simulation, verification</li>
-                  
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit GitHub" href="https://github.com/riti-singh" target="_blank" data-position="top"
-                    data-tooltip="View GitHub"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 5 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Systems project" src="/assets/img/project-systems.jpg"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Systems &amp; Modeling (MATLAB)<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>Modeling and analysis projects with measurement-aware validation and clear assumptions.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Highlights</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Focus:</b> modeling, analysis, comparing model vs behavior</li>
-                  <li><b>Tech:</b> MATLAB, systems &amp; controls</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit GitHub" href="https://github.com/riti-singh" target="_blank" data-position="top"
-                    data-tooltip="View GitHub"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Project 6 -->
-          <div class="col s12 m6 l4">
-            <div class="card medium">
-              <div class="card-image waves-effect waves-block waves-light">
-                <img alt="Hardware integration project" src="/assets/img/project-smart-sort.jpg"
-                  style="height: 100%; width: 100%" class="activator" />
-              </div>
-              <div class="card-content">
-                <span class="card-title activator teal-text hoverline">Smart Sort — Hardware Integration<i
-                    class="mdi-navigation-more-vert right"></i></span>
-                <p>Sensor-driven prototype work: integration, iteration, and reliability-focused debugging.</p>
-              </div>
-              <div class="card-reveal">
-                <span class="card-title grey-text"><small>Highlights</small><i class="mdi-navigation-close right"></i></span>
-                <ul>
-                  <li><b>Focus:</b> PCB iteration, power + sensor integration, trade-offs</li>
-                  <li><b>Tech:</b> embedded control circuitry, testing &amp; validation</li>
-                </ul>
-                <div class="card-action">
-                  <a aria-label="Visit GitHub" href="https://github.com/riti-singh" target="_blank" data-position="top"
-                    data-tooltip="View GitHub"
-                    class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-github"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-        <p style="opacity: 0.9;">
-          
-        </p>
-      </div>
-    </section>
-
-    <!-- Skills -->
-    <section id="skills" class="section scrollspy">
-      <h3 class="page-title white-text teal">Skills</h3>
-      <div class="container">
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Embedded &amp; Firmware</h4>
-            <ul>
-              <li>STM32 microcontrollers, Embedded C/C++</li>
-              <li>PWM control, ADC sensing, timers/interrupts</li>
-              <li>UART, I²C communication, real-time sensor acquisition and processing</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Digital Hardware</h4>
-            <ul>
-              <li>VHDL/Verilog, FPGA design</li>
-              <li>Finite state machines, datapaths, simulation/testbenches</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Systems &amp; Analysis</h4>
-            <ul>
-              <li>MATLAB: modeling and data analysis</li>
-              <li>Systems &amp; controls, circuit analysis, digital logic foundations</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card">
-          <div class="card-content">
-            <h4 class="brown-text light">Tools &amp; Debugging</h4>
-            <ul>
-              <li>Git, gcc/make, gdb, valgrind</li>
-              <li>Documentation, structured testing, reliability mindset</li>
-            </ul>
-          </div>
-        </div>
-
-      </div>
-    </section>
-
-    <!-- Education -->
-    <section id="education" class="section scrollspy">
-      <h3 class="page-title white-text teal">Education</h3>
-      <div class="container">
-        <div class="row">
-
-          <div class="col s12 m8 l8">
-            <div class="card">
-              <div class="card-content">
-                <p>
-                  <span class="card-title">
-                    <a href="https://home.dartmouth.edu/" target="_blank" class="teal-text hoverline">Dartmouth College</a>
-                  </span>
-                </p>
-                <p class="brown-text">Hanover, NH</p>
-                <p>
-                  <b>Degree:</b> Electrical &amp; Computer Engineering (Class of 2027)<br>
-                  <b>GPA:</b> 3.76 / 4.00 &nbsp;|&nbsp; <b>Honors:</b> College Honors List; Philip R. Jackson Award
-                </p>
-                <p>
-                  <b>Relevant Coursework:</b> Digital Electronics; Embedded Systems; Systems &amp; Controls; Electromagnetism &amp; Waves
-                </p>
-              </div>
-            </div>
-          </div>
-
-          <div class="col s12 m4 l4">
-            <div class="card">
-              <div class="card-content">
-                <p><span class="card-title teal-text">Also</span></p>
-                <ul>
-                  <li><b>Certifications:</b> CITI Responsible Conduct of Research; CPR / First Aid / AED</li>
-                  <li><b>Languages:</b> English, Hindi (Fluent); Spanish (Conversational)</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section id="contact" class="section scrollspy full-height">
-      <h3 class="page-title white-text teal">Contact</h3>
-      <div class="container">
+    <section id="education" class="light-section">
+      <div class="shell">
+        <div class="section-head reveal">
+          <div>
+            <div class="section-kicker">Education</div>
+            <h2 class="section-title">Dartmouth College</h2>
+          </div>
+          <p class="section-intro">Bachelor of Engineering in Electrical &amp; Computer Engineering · Expected June 2027</p>
+        </div>
 
-        <p>
-          <a aria-label="Email Riti" href="mailto:riti.k.singh27@dartmouth.edu" target="_blank" data-position="top"
-            data-tooltip="Email Riti" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-envelope"></i></a>
-          <a aria-label="Email Riti" href="mailto:riti.k.singh27@dartmouth.edu" class="hoverline">
-            riti.k.singh27@dartmouth.edu
-          </a>
-        </p>
+        <div class="education-card reveal">
+          <div>
+            <h3>Electrical &amp; Computer Engineering</h3>
+            <p>Relevant coursework: Embedded Systems · FPGA Design · Systems &amp; Controls · Linear Systems · Semiconductor / device-physics coursework</p>
+          </div>
+          <div class="gpa">GPA 3.76 / 4.00</div>
+        </div>
+      </div>
+    </section>
 
-        <p>
-          <a aria-label="Call Riti" data-position="top" data-tooltip="Call Riti"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i class="fa fa-phone"></i></a>
-          <a aria-label="Call Riti">602-300-1215</a>
-        </p>
-
-        <p>
-          <a aria-label="View Riti on GitHub" href="https://github.com/riti-singh" target="_blank" data-position="top"
-            data-tooltip="View GitHub" class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-github"></i></a>
-          <a aria-label="Riti on GitHub" href="https://github.com/riti-singh" class="hoverline" target="_blank">
-            github.com/riti-singh
-          </a>
-        </p>
-
-        <p>
-          <a aria-label="View Riti on LinkedIn" href="https://www.linkedin.com/in/riti-k-singh/" target="_blank"
-            data-position="top" data-tooltip="View LinkedIn"
-            class="btn-floating btn-large waves-effect waves-light blue-grey tooltipped"><i
-              class="fa fa-linkedin"></i></a>
-          <a aria-label="Riti on LinkedIn" href="https://www.linkedin.com/in/riti-k-singh/" class="hoverline"
-            target="_blank">
-            linkedin.com/in/riti-k-singh
-          </a>
-        </p>
-
-        <p style="margin-top: 20px; opacity: 0.9;">
-          I’m happy to share additional documentation, diagrams, and validation artifacts upon request.
-        </p>
-
+    <section id="contact" class="contact">
+      <div class="shell reveal">
+        <div class="section-kicker">Contact</div>
+        <h2>Building something difficult? <span class="gradient-text">I’d like to hear about it.</span></h2>
+        <p>I’m interested in software, systems, embedded, hardware-adjacent, and engineering automation roles where I can own real technical problems and work across disciplines.</p>
+        <div class="contact-links">
+          <a class="button primary" href="mailto:riti.k.singh.27@dartmouth.edu">Email me</a>
+          <a class="button secondary" href="https://github.com/riti-singh" target="_blank" rel="noopener">GitHub ↗</a>
+          <a class="button secondary" href="https://www.linkedin.com/in/riti-k-singh/" target="_blank" rel="noopener">LinkedIn ↗</a>
+          <a class="button secondary" href="/assets/resume/Riti_Singh_Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+        </div>
       </div>
     </section>
   </main>
 
-  <!-- typed.js -->
-  <script src="assets/vendor/typed.js/typed.min.js"></script>
-  <script type="text/javascript">
-    var typed = new Typed('.typing', {
-      strings: ["embedded systems", "digital hardware", "hardware-software integration", "test & validation"],
-      loop: true,
-      typeSpeed: 65,
-      backSpeed: 30
-    });
-  </script>
+  <footer>
+    <div class="shell">Designed and built by Riti Singh.</div>
+  </footer>
 
-  <!-- jQuery -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-
-  <!-- Materialize - Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.95.3/js/materialize.min.js"></script>
   <script>
-    // Materialize - Initializers
-    $(document).ready(function () {
-      $(".scrollspy").scrollSpy();
-      $(".button-collapse").sideNav({
-        menuWidth: 190,
-        edge: "left",
-        closeOnClick: true
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('visible');
+          observer.unobserve(entry.target);
+        }
       });
-    });
+    }, { threshold: 0.08 });
+
+    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
   </script>
 </body>
-
 </html>
-

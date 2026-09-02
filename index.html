@@ -1,869 +1,95 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Riti Singh is a Dartmouth Electrical & Computer Engineering student building intelligent systems across software, embedded hardware, digital design, and engineering validation." />
-  <meta name="author" content="Riti Singh" />
-  <meta name="theme-color" content="#07111f" />
-
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Riti Singh | Electrical & Computer Engineering" />
-  <meta property="og:description" content="Software, embedded systems, digital hardware, and engineering automation." />
-  <meta property="og:url" content="https://riti-singh.github.io/" />
-  <meta property="og:image" content="https://riti-singh.github.io/assets/img/preview.jpg" />
-
-  <title>Riti Singh | Electrical & Computer Engineering</title>
-
-  <style>
-    :root {
-      --ink: #07111f;
-      --ink-2: #0b1728;
-      --panel: #0f1d31;
-      --panel-2: #13243b;
-      --text: #f7fbff;
-      --muted: #9db0c5;
-      --line: rgba(148, 178, 210, 0.16);
-      --blue: #5b8cff;
-      --cyan: #4ed8e8;
-      --soft-blue: #b9cdff;
-      --white-panel: #f5f8fc;
-      --dark-text: #102033;
-      --dark-muted: #5f7083;
-      --max: 1180px;
-      --radius: 22px;
-      --shadow: 0 22px 70px rgba(0, 0, 0, 0.22);
-    }
-
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
-    body {
-      margin: 0;
-      font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: var(--ink);
-      color: var(--text);
-      line-height: 1.6;
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-    img { max-width: 100%; display: block; }
-
-    .shell {
-      width: min(var(--max), calc(100% - 44px));
-      margin: 0 auto;
-    }
-
-    .nav-wrap {
-      position: fixed;
-      inset: 0 0 auto 0;
-      z-index: 100;
-      backdrop-filter: blur(18px);
-      background: rgba(7, 17, 31, 0.78);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      height: 72px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 22px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .brand-mark {
-      width: 36px;
-      height: 36px;
-      border-radius: 11px;
-      display: grid;
-      place-items: center;
-      color: #06121f;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-      box-shadow: 0 0 30px rgba(78, 216, 232, 0.2);
-      font-size: 0.82rem;
-      letter-spacing: 0;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 24px;
-      color: var(--muted);
-      font-size: 0.94rem;
-      font-weight: 650;
-    }
-
-    .nav-links a { transition: color .2s ease; }
-    .nav-links a:hover { color: var(--text); }
-
-    .resume-link {
-      padding: 9px 14px;
-      border-radius: 999px;
-      color: var(--text) !important;
-      border: 1px solid rgba(91, 140, 255, 0.44);
-      background: rgba(91, 140, 255, 0.08);
-    }
-
-    .hero {
-      position: relative;
-      min-height: 92vh;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      padding: 130px 0 80px;
-    }
-
-    .hero::before,
-    .hero::after {
-      content: "";
-      position: absolute;
-      border-radius: 999px;
-      filter: blur(10px);
-      pointer-events: none;
-    }
-
-    .hero::before {
-      width: 520px;
-      height: 520px;
-      top: -170px;
-      right: -110px;
-      background: radial-gradient(circle, rgba(91, 140, 255, .21), rgba(91, 140, 255, 0) 70%);
-    }
-
-    .hero::after {
-      width: 500px;
-      height: 500px;
-      left: -210px;
-      bottom: -250px;
-      background: radial-gradient(circle, rgba(78, 216, 232, .13), rgba(78, 216, 232, 0) 70%);
-    }
-
-    .hero-grid {
-      position: relative;
-      z-index: 2;
-      display: grid;
-      grid-template-columns: minmax(0, 1.28fr) minmax(300px, .72fr);
-      align-items: end;
-      gap: 70px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      margin-bottom: 22px;
-      color: var(--cyan);
-      font-weight: 750;
-      font-size: .9rem;
-      letter-spacing: .12em;
-      text-transform: uppercase;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 36px;
-      height: 1px;
-      background: var(--cyan);
-    }
-
-    h1 {
-      max-width: 860px;
-      margin: 0;
-      font-size: clamp(3.8rem, 8vw, 7.4rem);
-      line-height: .92;
-      letter-spacing: -.065em;
-      font-weight: 800;
-    }
-
-    .gradient-text {
-      color: transparent;
-      background: linear-gradient(100deg, #f8fbff 5%, #9bb8ff 50%, #66dce9 95%);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    .hero-copy {
-      max-width: 760px;
-      margin: 30px 0 0;
-      color: #b5c5d7;
-      font-size: clamp(1.05rem, 1.7vw, 1.28rem);
-      line-height: 1.7;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .button {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      min-height: 46px;
-      padding: 0 18px;
-      border-radius: 12px;
-      border: 1px solid var(--line);
-      font-weight: 750;
-      font-size: .95rem;
-      transition: transform .2s ease, border-color .2s ease, background .2s ease;
-    }
-
-    .button:hover { transform: translateY(-2px); }
-    .button.primary {
-      color: #07111f;
-      border-color: transparent;
-      background: linear-gradient(135deg, var(--blue), var(--cyan));
-    }
-    .button.secondary { color: var(--text); background: rgba(255,255,255,.025); }
-    .button.secondary:hover { border-color: rgba(78, 216, 232, .45); }
-
-    .hero-side {
-      padding: 26px;
-      border: 1px solid var(--line);
-      border-radius: var(--radius);
-      background: linear-gradient(180deg, rgba(19, 36, 59, .8), rgba(11, 23, 40, .62));
-      box-shadow: var(--shadow);
-    }
-
-    .hero-side .label {
-      color: var(--muted);
-      font-size: .78rem;
-      text-transform: uppercase;
-      letter-spacing: .14em;
-      font-weight: 750;
-    }
-
-    .focus-list {
-      display: grid;
-      gap: 0;
-      margin-top: 8px;
-    }
-
-    .focus-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      padding: 15px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .focus-row:last-child { border-bottom: 0; }
-    .focus-row span:first-child { font-weight: 720; }
-    .focus-row span:last-child { color: var(--muted); font-size: .88rem; text-align: right; }
-
-    section { padding: 100px 0; }
-
-    .light-section {
-      background: var(--white-panel);
-      color: var(--dark-text);
-    }
-
-    .section-head {
-      display: grid;
-      grid-template-columns: .55fr 1.45fr;
-      gap: 50px;
-      align-items: start;
-      margin-bottom: 46px;
-    }
-
-    .section-kicker {
-      color: var(--blue);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-      font-size: .82rem;
-      font-weight: 800;
-    }
-
-    .section-title {
-      margin: 6px 0 0;
-      font-size: clamp(2.3rem, 4vw, 4rem);
-      line-height: 1.04;
-      letter-spacing: -.045em;
-    }
-
-    .section-intro {
-      margin: 5px 0 0;
-      max-width: 720px;
-      color: var(--dark-muted);
-      font-size: 1.08rem;
-    }
-
-    .dark-intro { color: var(--muted); }
-
-    .experience-list {
-      display: grid;
-      gap: 18px;
-    }
-
-    .experience-card {
-      position: relative;
-      display: grid;
-      grid-template-columns: 210px minmax(0, 1fr);
-      gap: 30px;
-      padding: 30px;
-      border: 1px solid #dbe5ef;
-      border-radius: 20px;
-      background: #ffffff;
-      transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
-    }
-
-    .experience-card:hover {
-      transform: translateY(-3px);
-      border-color: #bfd1e5;
-      box-shadow: 0 22px 45px rgba(34, 61, 91, .09);
-    }
-
-    .company {
-      font-weight: 820;
-      font-size: 1.05rem;
-      letter-spacing: -.01em;
-    }
-    .meta { margin-top: 5px; color: #6c7f92; font-size: .9rem; }
-    .role { margin: 0 0 12px; font-size: 1.15rem; font-weight: 800; }
-
-    .experience-card ul {
-      margin: 0;
-      padding-left: 18px;
-      color: #45586b;
-    }
-    .experience-card li + li { margin-top: 7px; }
-
-    .project-grid {
-      display: grid;
-      grid-template-columns: repeat(12, 1fr);
-      gap: 18px;
-    }
-
-    .project {
-      position: relative;
-      overflow: hidden;
-      min-height: 340px;
-      padding: 28px;
-      border: 1px solid var(--line);
-      border-radius: 22px;
-      background:
-        radial-gradient(circle at 100% 0%, rgba(91, 140, 255, .12), transparent 34%),
-        linear-gradient(180deg, rgba(19, 36, 59, .92), rgba(11, 23, 40, .94));
-      transition: transform .22s ease, border-color .22s ease;
-    }
-
-    .project:hover {
-      transform: translateY(-4px);
-      border-color: rgba(78, 216, 232, .35);
-    }
-
-    .project.large { grid-column: span 7; }
-    .project.medium { grid-column: span 5; }
-    .project.half { grid-column: span 6; }
-
-    .project-number {
-      color: rgba(157, 176, 197, .52);
-      font-size: .76rem;
-      letter-spacing: .14em;
-      font-weight: 800;
-    }
-
-    .project h3 {
-      max-width: 620px;
-      margin: 20px 0 12px;
-      font-size: clamp(1.6rem, 2.6vw, 2.35rem);
-      line-height: 1.08;
-      letter-spacing: -.035em;
-    }
-
-    .project p {
-      margin: 0;
-      max-width: 690px;
-      color: #a9bbce;
-      font-size: .98rem;
-    }
-
-    .project-metric {
-      display: inline-flex;
-      margin-top: 21px;
-      color: #dce8f5;
-      font-weight: 780;
-      font-size: .9rem;
-    }
-
-    .tags {
-      position: absolute;
-      left: 28px;
-      right: 28px;
-      bottom: 26px;
-      display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-    }
-
-    .tag {
-      padding: 6px 9px;
-      border-radius: 999px;
-      border: 1px solid rgba(157, 176, 197, .16);
-      background: rgba(255,255,255,.035);
-      color: #c4d3e2;
-      font-size: .77rem;
-      font-weight: 680;
-    }
-
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-      gap: 14px;
-    }
-
-    .skill-group {
-      padding: 23px;
-      border: 1px solid #dbe5ef;
-      border-radius: 18px;
-      background: white;
-    }
-
-    .skill-group h3 { margin: 0 0 12px; font-size: 1rem; }
-    .skill-group p { margin: 0; color: var(--dark-muted); font-size: .93rem; line-height: 1.7; }
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1.3fr .7fr;
-      gap: 70px;
-      align-items: start;
-    }
-
-    .about-copy {
-      color: #b7c7d8;
-      font-size: 1.15rem;
-      line-height: 1.85;
-    }
-    .about-copy p:first-child { margin-top: 0; }
-
-    .stats {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 12px;
-    }
-
-    .stat {
-      padding: 20px;
-      border: 1px solid var(--line);
-      border-radius: 18px;
-      background: rgba(255,255,255,.025);
-    }
-    .stat strong {
-      display: block;
-      font-size: 1.7rem;
-      line-height: 1;
-      letter-spacing: -.04em;
-      color: var(--soft-blue);
-    }
-    .stat span { display: block; margin-top: 8px; color: var(--muted); font-size: .83rem; }
-
-    .education-card {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 30px;
-      align-items: center;
-      padding: 30px;
-      border-radius: 20px;
-      background: #fff;
-      border: 1px solid #dbe5ef;
-    }
-    .education-card h3 { margin: 0; font-size: 1.45rem; }
-    .education-card p { margin: 8px 0 0; color: var(--dark-muted); }
-    .gpa { font-weight: 820; color: var(--dark-text); white-space: nowrap; }
-
-    .contact {
-      position: relative;
-      text-align: center;
-      overflow: hidden;
-    }
-    .contact h2 {
-      max-width: 880px;
-      margin: 0 auto;
-      font-size: clamp(2.7rem, 6vw, 5.5rem);
-      line-height: .98;
-      letter-spacing: -.055em;
-    }
-    .contact p {
-      max-width: 650px;
-      margin: 22px auto 0;
-      color: var(--muted);
-      font-size: 1.06rem;
-    }
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 11px;
-      margin-top: 30px;
-    }
-
-    footer {
-      padding: 26px 0 38px;
-      color: #7890a7;
-      text-align: center;
-      font-size: .83rem;
-    }
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(14px);
-      transition: opacity .55s ease, transform .55s ease;
-    }
-    .reveal.visible { opacity: 1; transform: none; }
-
-    @media (max-width: 940px) {
-      .nav-links a:not(.resume-link) { display: none; }
-      .hero-grid,
-      .section-head,
-      .about-grid { grid-template-columns: 1fr; }
-      .hero-grid { gap: 38px; }
-      .section-head { gap: 18px; }
-      .experience-card { grid-template-columns: 1fr; gap: 18px; }
-      .project.large,
-      .project.medium,
-      .project.half { grid-column: span 12; }
-      .skills-grid { grid-template-columns: repeat(2, 1fr); }
-    }
-
-    @media (max-width: 620px) {
-      .shell { width: min(var(--max), calc(100% - 28px)); }
-      .nav { height: 64px; }
-      .hero { padding-top: 108px; min-height: auto; }
-      h1 { font-size: clamp(3.3rem, 17vw, 5rem); }
-      section { padding: 76px 0; }
-      .skills-grid,
-      .stats { grid-template-columns: 1fr; }
-      .education-card { grid-template-columns: 1fr; }
-      .project { min-height: 390px; }
-      .hero-side { padding: 20px; }
-    }
-  </style>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Riti Singh is a Dartmouth Electrical & Computer Engineering student building across circuits, embedded systems, graph infrastructure, and deployed AI.">
+  <meta name="author" content="Riti Singh">
+  <meta name="theme-color" content="#06110d">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://riti-singh.github.io/">
+  <meta property="og:title" content="Riti Singh | ECE to AI Systems">
+  <meta property="og:description" content="Circuits, embedded systems, graph infrastructure, and deployed AI engineering.">
+  <meta property="og:image" content="https://riti-singh.github.io/assets/img/og.png">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Riti Singh | ECE to AI Systems">
+  <meta name="twitter:description" content="Circuits, embedded systems, graph infrastructure, and deployed AI engineering.">
+  <meta name="twitter:image" content="https://riti-singh.github.io/assets/img/og.png">
+  <link rel="icon" href="assets/img/favicon/favicon.ico" sizes="any">
+  <link rel="stylesheet" href="assets/css/portfolio.css">
+  <script src="assets/js/portfolio.js" defer></script>
+  <title>Riti Singh | ECE to AI Systems</title>
 </head>
-
 <body>
-  <header class="nav-wrap">
-    <div class="shell nav">
-      <a class="brand" href="#top" aria-label="Back to top">
-        <span class="brand-mark">RS</span>
-        <span>Riti Singh</span>
-      </a>
-      <nav class="nav-links" aria-label="Primary navigation">
-        <a href="#experience">Experience</a>
-        <a href="#projects">Projects</a>
-        <a href="#skills">Skills</a>
-        <a href="#about">About</a>
-        <a class="resume-link" href="assets/resume/Riti_Singh_Resume_26F.pdf" target="_blank" rel="noopener">Resume ↗</a>
-      </nav>
-    </div>
+  <a class="skip-link" href="#main-content">Skip to content</a>
+  <header class="system-nav">
+    <a class="wordmark" href="#top" aria-label="Riti Singh — back to top"><span class="wordmark-chip">RS</span><span><strong>Riti Singh</strong><small>ECE / SYSTEMS</small></span></a>
+    <nav aria-label="Primary navigation"><a href="#trajectory" data-nav-link><span>01</span> Path</a><a href="#systems" data-nav-link><span>02</span> Systems</a><a href="#about" data-nav-link><span>03</span> About</a><a href="#contact" data-nav-link><span>04</span> Output</a></nav>
+    <div class="nav-tools"><button class="command-trigger" type="button" data-command-open aria-label="Open site command menu"><span>Navigate</span><kbd>/</kbd></button><a class="nav-resume" href="assets/resume/Riti_Singh_Resume_26F.pdf" target="_blank" rel="noopener">Resume ↗</a></div>
   </header>
 
-  <main id="top">
-    <section class="hero">
-      <div class="shell hero-grid">
-        <div>
-          <div class="eyebrow">Electrical &amp; Computer Engineering · Dartmouth '27</div>
-          <h1>I build systems that connect <span class="gradient-text">software to the physical world.</span></h1>
-          <p class="hero-copy">
-            My work spans wireless engineering automation, embedded control, digital hardware, signal processing, and system validation. I care about turning technically complex systems into reliable tools that solve concrete engineering problems.
-          </p>
-          <div class="hero-actions">
-            <a class="button primary" href="#projects">Explore projects ↓</a>
-            <a class="button secondary" href="mailto:riti.k.singh.27@dartmouth.edu">riti.k.singh.27@dartmouth.edu</a>
-            <a class="button secondary" href="https://www.linkedin.com/in/riti-k-singh/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          </div>
+  <main id="main-content">
+    <section class="signal-hero observed-section" id="top" aria-labelledby="hero-title" data-section="top">
+      <div class="hero-annotation" aria-hidden="true">SYS.00 / PORTFOLIO INTERFACE / REV.26.09</div>
+      <div class="hero-layout">
+        <div class="hero-intro">
+          <p class="signal-label"><span class="status-dot"></span> Dartmouth ECE · Class of 2027</p>
+          <h1 id="hero-title">I trace hard problems across <em>abstraction layers.</em></h1>
+          <p class="hero-deck">I’m Riti Singh, an Electrical &amp; Computer Engineering student building intelligent systems across circuits, embedded hardware, software, graph infrastructure, and production AI.</p>
+          <div class="hero-actions" aria-label="Primary links"><a class="signal-button primary" href="#systems">Inspect the systems ↓</a><a class="signal-button" href="https://github.com/riti-singh" target="_blank" rel="noopener">GitHub ↗</a><a class="signal-button" href="https://www.linkedin.com/in/riti-k-singh/" target="_blank" rel="noopener">LinkedIn ↗</a></div>
         </div>
-
-        <aside class="hero-side reveal" aria-label="Current technical focus">
-          <div class="label">Current technical range</div>
-          <div class="focus-list">
-            <div class="focus-row"><span>Engineering software</span><span>Python · AWS · FastAPI</span></div>
-            <div class="focus-row"><span>Embedded systems</span><span>C/C++ · STM32 · controls</span></div>
-            <div class="focus-row"><span>Digital hardware</span><span>FPGA · VHDL · verification</span></div>
-            <div class="focus-row"><span>Validation</span><span>testing · failure analysis</span></div>
+        <figure class="trajectory-board" aria-labelledby="trajectory-caption">
+          <figcaption id="trajectory-caption"><span>ENGINEERING TRAJECTORY</span><span class="board-state"><i></i> SIGNAL LOCKED</span></figcaption>
+          <div class="trajectory-track" aria-label="Electrical and computer engineering to deployed AI systems">
+            <a class="trajectory-node n1" href="#foundation"><span class="pin">01</span><strong>ECE</strong><small>circuits · logic</small></a><a class="trajectory-node n2" href="#foundation"><span class="pin">02</span><strong>Embedded</strong><small>sensing · control</small></a><a class="trajectory-node n3" href="#trajectory"><span class="pin">03</span><strong>Platform</strong><small>automation · APIs</small></a><a class="trajectory-node n4" href="#spectrace"><span class="pin">04</span><strong>Graphs</strong><small>retrieval · topology</small></a><a class="trajectory-node n5" href="#contact"><span class="pin">05</span><strong>Deployed AI</strong><small>systems · people</small></a>
+            <svg class="trajectory-lines" viewBox="0 0 700 370" aria-hidden="true" preserveAspectRatio="none"><path class="trace-base" d="M82 184 H174 V78 H292 V184 H408 V294 H522 V184 H622"></path><path class="trace-live" d="M82 184 H174 V78 H292 V184 H408 V294 H522 V184 H622"></path><path class="branch" d="M292 184 V294 H365 M522 184 V80 H614"></path><circle cx="82" cy="184" r="4"></circle><circle cx="174" cy="78" r="4"></circle><circle cx="292" cy="184" r="4"></circle><circle cx="408" cy="294" r="4"></circle><circle cx="522" cy="184" r="4"></circle><circle cx="622" cy="184" r="4"></circle></svg>
           </div>
-        </aside>
+          <div class="board-footer"><span>INPUT: REAL ENGINEERING CONSTRAINTS</span><span>OUTPUT: USEFUL SYSTEMS</span></div>
+        </figure>
       </div>
+      <div class="hero-rail" aria-hidden="true"><span>R1</span><i></i><span>C1</span><i></i><span>U1</span></div>
     </section>
 
-    <section id="experience" class="light-section">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Experience</div>
-            <h2 class="section-title">Built across the stack, from test infrastructure to embedded hardware.</h2>
-          </div>
-          <p class="section-intro">
-            The common thread is systems work: understanding a messy technical problem, identifying what engineers actually need, and building something robust enough to be useful.
-          </p>
-        </div>
+    <aside class="status-strip" aria-label="Portfolio system status"><span><i></i> SYSTEM ONLINE</span><span>FOCUS / AI ENGINEERING · SOFTWARE · DEPLOYED SYSTEMS</span><span>LOC / HANOVER, NH</span><span>BUILD / 2026.09</span></aside>
 
-        <div class="experience-list">
-          <article class="experience-card reveal">
-            <div>
-              <div class="company">EchoStar · Boost Mobile</div>
-              <div class="meta">Denver, CO · Summer 2026</div>
-            </div>
-            <div>
-              <h3 class="role">Platform Engineering — AI &amp; Automation Intern</h3>
-              <ul>
-                <li>Developed an engineering automation platform for wireless device testing, automating requirements management, test workflows, and technical knowledge retrieval with benchmarking projecting a <strong>95% reduction in workflow time and manual effort</strong>.</li>
-                <li>Built a GraphRAG system connecting <strong>12,000+ specification nodes, 606 device requirements, and 728 test cases</strong> to improve engineering analysis and traceability.</li>
-                <li>Developed production services with Python, FastAPI, AWS Bedrock, SageMaker, Neptune, Neo4j, Boto3, and Pandas.</li>
-                <li>Worked with subject-matter experts and OEM teams to identify requirements-traceability gaps, test-case redundancy, and documentation bottlenecks; translated those needs into the platform architecture and features.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="experience-card reveal">
-            <div>
-              <div class="company">EvergreenAI</div>
-              <div class="meta">Hanover, NH · Sep 2025 – Jun 2026</div>
-            </div>
-            <div>
-              <h3 class="role">Project Assistant — AI Engineering</h3>
-              <ul>
-                <li>Evaluated production AI systems through structured validation, failure-mode analysis, and edge-case testing in a regulated deployment environment.</li>
-                <li>Developed evaluation datasets and testing workflows to measure reliability and consistency, partnering with engineers and stakeholders to identify failure patterns and improve production readiness.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="experience-card reveal">
-            <div>
-              <div class="company">Smart Sort</div>
-              <div class="meta">Hanover, NH · Mar 2024 – Sep 2025</div>
-            </div>
-            <div>
-              <h3 class="role">Electrical &amp; Circuits Lead · Business Lead</h3>
-              <ul>
-                <li>Led electrical architecture for an award-winning autonomous waste-sorting platform integrating embedded sensing, microcontrollers, and electromechanical automation.</li>
-                <li>Designed embedded control systems coordinating weight sensing, metal detection, servo control, and power electronics while balancing reliability, manufacturability, power, and cost.</li>
-                <li>Received the <strong>Philip R. Jackson Award for Innovation</strong> for technical and entrepreneurial contributions.</li>
-              </ul>
-            </div>
-          </article>
-
-          <article class="experience-card reveal">
-            <div>
-              <div class="company">Dartmouth · EE Just Fellowship</div>
-              <div class="meta">Hanover, NH · Summer 2024</div>
-            </div>
-            <div>
-              <h3 class="role">Research Fellow</h3>
-              <ul>
-                <li>Built automated Python data pipelines processing and analyzing <strong>10,000+ recommendation-system observations</strong> across multiple social media platforms.</li>
-                <li>Analyzed recommendation drift and instability using statistical methods and presented findings at university research forums and GenAI ethics discussions.</li>
-              </ul>
-            </div>
-          </article>
+    <section class="trajectory-section observed-section" id="trajectory" aria-labelledby="trajectory-title" data-section="trajectory">
+      <div class="section-shell">
+        <header class="section-heading reveal-item"><p class="section-index">01 / SIGNAL PATH</p><h2 id="trajectory-title">The work changed layers.<br><em>The systems thinking stayed.</em></h2><p>From hardware behavior to engineering workflows, I’m interested in finding the structure inside complicated systems—and making that structure useful to the people operating them.</p></header>
+        <div class="experience-path">
+          <div class="path-line" aria-hidden="true"><span data-path-progress></span></div>
+          <article class="path-stop path-stop-featured reveal-item"><div class="path-marker"><span>U4</span></div><div class="path-meta"><span class="path-year">2026</span><span>DENVER, CO</span></div><div class="path-content"><p class="eyebrow">EchoStar · Boost Mobile Wireless Device Engineering</p><h3>Platform (AI/Automation) Engineering Intern</h3><p class="path-lead">Built a 0-to-1 AI-assisted engineering platform around GraphRAG, graph databases, retrieval, and real wireless-device engineering workflows.</p><ul class="compact-list"><li>Partnered with engineers, subject-matter experts, and OEM stakeholders to locate high-friction requirements, testing, and documentation work.</li><li>Connected 12,000+ specification nodes, 606 device requirements, and 728 test cases for context-aware technical reasoning and traceability.</li><li>Built Python and FastAPI services plus AWS/Boto3, Neptune, Neo4j, and Pandas data workflows; tested edge cases and retrieval failures iteratively.</li><li>Reduced workflow time and manual effort by approximately 95%, presented to engineering leadership, and earned 2nd Place in EchoStar’s company-wide competition.</li></ul><div class="metric-bus" aria-label="EchoStar project metrics"><span><strong>12K+</strong> SPEC NODES</span><span><strong>606</strong> REQUIREMENTS</span><span><strong>728</strong> TEST CASES</span><span><strong>~95%</strong> LESS TIME + EFFORT</span></div></div></article>
+          <article class="path-stop reveal-item"><div class="path-marker"><span>D3</span></div><div class="path-meta"><span class="path-year">2025—26</span><span>HANOVER, NH</span></div><div class="path-content split-content"><div><p class="eyebrow">EvergreenAI</p><h3>Production AI, evaluated like a system</h3></div><p>Developed structured evaluation datasets and repeatable validation workflows for production AI. Focused on failure-mode analysis, edge cases, reliability, consistency, and the evidence needed to judge production readiness in a regulated deployment environment.</p></div></article>
+          <article class="path-stop reveal-item"><div class="path-marker"><span>M2</span></div><div class="path-meta"><span class="path-year">2024—25</span><span>HANOVER, NH</span></div><div class="path-content split-content"><div><p class="eyebrow">Smart Sort</p><h3>One product, every engineering layer</h3></div><p>Co-led an autonomous waste-sorting system across electrical architecture, sensing, microcontrollers, control logic, electromechanical actuation, power electronics, system integration, and product decisions. Awarded the <strong>Philip R. Jackson Award for Innovation.</strong></p></div></article>
+          <article class="path-stop reveal-item"><div class="path-marker"><span>A1</span></div><div class="path-meta"><span class="path-year">2024</span><span>5 DATASETS</span></div><div class="path-content split-content"><div><p class="eyebrow">Dartmouth · EE Just Research Fellowship</p><h3>Recommendation systems under stress</h3></div><p>Built Python collection pipelines with APIs and custom scraping tools, gathering 10,000+ observations across five datasets. Designed adversarial experiments to study recommendation drift in short-form content systems.</p></div></article>
         </div>
       </div>
     </section>
 
-    <section id="projects">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Selected work</div>
-            <h2 class="section-title">Projects with real technical depth.</h2>
-          </div>
-          <p class="section-intro dark-intro">
-            A mix of software, circuits, embedded control, digital systems, and device physics. The goal here is range without losing specificity.
-          </p>
-        </div>
+    <section class="systems-section observed-section" id="systems" aria-labelledby="systems-title" data-section="systems">
+      <div class="section-shell">
+        <header class="section-heading section-heading-wide reveal-item"><p class="section-index">02 / SYSTEMS</p><h2 id="systems-title">Different problems deserve<br><em>different diagrams.</em></h2><p>No six-card grid: each project is represented by the technical behavior that makes it interesting.</p></header>
 
-        <div class="project-grid">
-          <article class="project large reveal">
-            <div class="project-number">01 · WIRELESS / PLATFORM ENGINEERING</div>
-            <h3>GraphRAG Engineering Platform for Wireless Test Automation</h3>
-            <p>Connected technical specifications, device requirements, and test cases into a context-aware engineering system. SME and OEM feedback shaped the architecture around traceability gaps, redundant testing, and high-friction documentation workflows rather than treating AI as the end goal.</p>
-            <span class="project-metric">12,000+ spec nodes · 606 requirements · 728 test cases</span>
-            <div class="tags">
-              <span class="tag">Python</span><span class="tag">FastAPI</span><span class="tag">AWS</span><span class="tag">GraphRAG</span><span class="tag">Neptune</span><span class="tag">Neo4j</span>
-            </div>
-          </article>
+        <article class="system-module echostar-module reveal-item" aria-labelledby="echostar-title"><header class="module-header"><div><span class="module-id">SYS.GRAPH / 01</span><h3 id="echostar-title">Wireless engineering GraphRAG platform</h3></div><span class="module-state">LEAD SYSTEM</span></header><div class="module-grid echo-grid"><div class="module-copy"><p>Graph relationships turned disconnected technical artifacts into navigable engineering context. Retrieval supported analysis; the product goal was less time lost to traceability, repetition, and fragmented documentation.</p><div class="tech-line"><span>Python</span><span>FastAPI</span><span>AWS</span><span>Neptune</span><span>Neo4j</span><span>GraphRAG</span></div><details class="engineering-notes"><summary>Open engineering notes</summary><div><p><strong>Design pressure:</strong> answer technical questions without losing relationships between specifications, requirements, and test evidence.</p><p><strong>Validation:</strong> retrieval failure analysis, edge-case testing, data-structure refinement, and iterative review with engineers and SMEs.</p></div></details></div><div class="architecture architecture-graph" data-architecture><button type="button" class="arch-node specs" data-arch-node="specs"><span>12K+</span>Specifications</button><button type="button" class="arch-node graph" data-arch-node="graph"><span>KG</span>Knowledge graph</button><button type="button" class="arch-node req" data-arch-node="req"><span>606</span>Requirements</button><button type="button" class="arch-node tests" data-arch-node="tests"><span>728</span>Test cases</button><button type="button" class="arch-node retrieve" data-arch-node="retrieve"><span>R</span>Graph retrieval</button><button type="button" class="arch-node reason" data-arch-node="reason"><span>AI</span>Reasoning</button><button type="button" class="arch-node workflow" data-arch-node="workflow"><span>→</span>Engineer workflow</button><svg viewBox="0 0 760 420" aria-hidden="true" preserveAspectRatio="none"><path data-edge="specs graph" d="M114 78 H286"></path><path data-edge="req graph" d="M114 210 H286"></path><path data-edge="tests graph" d="M114 344 H286"></path><path data-edge="graph retrieve" d="M395 210 H490"></path><path data-edge="retrieve reason" d="M590 210 V302"></path><path data-edge="reason workflow" d="M590 348 H690 V210"></path></svg><p class="arch-readout" aria-live="polite" data-arch-readout>Focus a node to inspect the platform’s conceptual signal path.</p></div></div></article>
 
-          <article class="project medium reveal">
-            <div class="project-number">02 · ENGS 32 DESIGN PROJECT</div>
-            <h3>Intelligent Heartbeat Monitor + Class-D Audio System</h3>
-            <p>Designed a full signal chain from cardiac sensing and analog conditioning through timing logic, a 450 Hz tone path, PWM generation, break-before-make gate control, a MOSFET half-bridge, and LC-filtered speaker output. Validated subsystem behavior in LTspice and on the oscilloscope, then demonstrated operation on a real heartbeat.</p>
-            <div class="tags">
-              <span class="tag">Analog circuits</span><span class="tag">555 timing</span><span class="tag">PWM</span><span class="tag">Class-D</span><span class="tag">LTspice</span><span class="tag">Oscilloscope</span>
-            </div>
-          </article>
+        <article class="system-module spectrace-module reveal-item" id="spectrace" aria-labelledby="spectrace-title"><header class="module-header"><div><span class="module-id">SYS.SOFTWARE / 02</span><h3 id="spectrace-title">Spectrace AI</h3></div><a class="module-link" href="https://github.com/riti-singh/spectrace-ai" target="_blank" rel="noopener">Source ↗</a></header><div class="module-grid spectrace-grid"><div class="software-stack" aria-label="Spectrace software architecture"><div class="stack-layer frontend"><span>UI</span><strong>React + TypeScript workspace</strong><small>typed API client · responsive graph exploration</small></div><div class="stack-connector"><i></i><code>typed HTTP</code><i></i></div><div class="stack-layer api"><span>API</span><strong>FastAPI route layer</strong><small>validated requests · structured responses</small></div><div class="stack-connector"><i></i><code>domain protocols</code><i></i></div><div class="stack-layer service"><span>SVC</span><strong>Traceability + retrieval services</strong><small>bounded traversal · explainable rank fusion</small></div><div class="stack-fork"><div><span>REPO.A</span><strong>Validated JSON</strong></div><div><span>REPO.B</span><strong>Neo4j graph</strong></div></div></div><div class="module-copy"><p class="large-copy">A production-oriented requirements traceability workspace built as a real software system—not a thin AI demo.</p><p>Strict models, repository/service boundaries, graph-backed data, bounded retrieval, deterministic evaluation fixtures, automated tests, and containerized infrastructure make the architecture inspectable and repeatable.</p><div class="tech-line"><span>Python</span><span>FastAPI</span><span>Neo4j</span><span>Docker</span><span>React</span><span>TypeScript</span></div><details class="engineering-notes"><summary>Open verified scope</summary><div><p>The public project uses a deterministic synthetic satellite-terminal dataset. It supports read-only traceability, graph analysis, lexical/semantic/graph retrieval, and a checked-in evaluation; it does not claim production users or deployment.</p></div></details></div></div></article>
 
-          <article class="project medium reveal">
-            <div class="project-number">03 · EMBEDDED SYSTEMS</div>
-            <h3>STM32 Marble Maze Motion Controller</h3>
-            <p>Built an embedded controller for a multi-axis marble maze using joystick input, stepper actuation, sensor interfaces, and state-based control. The project emphasized timer-driven behavior, hardware integration, debugging, and reliable real-time interaction.</p>
-            <div class="tags">
-              <span class="tag">STM32</span><span class="tag">C</span><span class="tag">PWM</span><span class="tag">ADC</span><span class="tag">I²C</span><span class="tag">State machines</span>
-            </div>
-          </article>
+        <article class="system-module smart-sort-module reveal-item" aria-labelledby="smart-sort-title"><header class="module-header"><div><span class="module-id">SYS.EMBEDDED / 03</span><h3 id="smart-sort-title">Smart Sort</h3></div><span class="module-state award">AWARD / PHILIP R. JACKSON</span></header><div class="module-grid sorter-grid"><div class="sorter-flow" aria-label="Smart Sort hardware block diagram"><div class="sort-item input"><span>S1</span><strong>Load cell</strong><small>mass signal</small></div><div class="sort-item input"><span>S2</span><strong>Metal sensing</strong><small>material signal</small></div><div class="sort-bus" aria-hidden="true"><i></i><b>ADC / GPIO</b><i></i></div><div class="sort-item control"><span>U1</span><strong>Microcontroller</strong><small>decision + control logic</small></div><div class="sort-bus" aria-hidden="true"><i></i><b>PWM / POWER</b><i></i></div><div class="sort-item output"><span>M1</span><strong>Servo actuation</strong><small>physical sort</small></div></div><div class="module-copy"><p class="large-copy">The point was never one clever subsystem. It was making the whole machine work.</p><p>Co-led electrical architecture, embedded sensing, microcontroller logic, electromechanical actuation, power electronics, product tradeoffs, and end-to-end integration.</p><div class="tech-line"><span>Sensing</span><span>Control</span><span>Power</span><span>Actuation</span><span>Integration</span></div></div></div></article>
 
-          <article class="project large reveal">
-            <div class="project-number">04 · DIGITAL SYSTEMS / FPGA</div>
-            <h3>FPGA MIDI Receiver + Verified Digital Control Logic</h3>
-            <p>Implemented UART receive, baud timing, parsing, finite-state control, and datapath logic in VHDL on the Basys3 platform. Used modular design and simulation/testbenches to verify timing-sensitive behavior before hardware integration.</p>
-            <div class="tags">
-              <span class="tag">VHDL</span><span class="tag">FPGA</span><span class="tag">UART</span><span class="tag">FSMs</span><span class="tag">Datapaths</span><span class="tag">Testbenches</span>
-            </div>
-          </article>
-
-          <article class="project half reveal">
-            <div class="project-number">05 · SEMICONDUCTOR PHYSICS · COURSEWORK</div>
-            <h3>Semiconductor Device Modeling &amp; Band-Diagram Analysis</h3>
-            <p>Analyzed pn junctions and MOS structures using doping profiles, depletion approximations, built-in potential, electric fields, capacitance, oxide thickness, and energy-band bending. Translated device equations into quantitative models and physically consistent band diagrams across bias conditions.</p>
-            <div class="tags">
-              <span class="tag">pn junctions</span><span class="tag">MOS</span><span class="tag">band diagrams</span><span class="tag">depletion</span><span class="tag">device physics</span>
-            </div>
-          </article>
-
-          <article class="project half reveal">
-            <div class="project-number">06 · ELECTROMECHANICAL SYSTEMS</div>
-            <h3>Smart Sort — Autonomous Material Classification</h3>
-            <p>Integrated load-cell sensing, inductive metal detection, microcontroller decision logic, servo actuation, and power electronics into an autonomous sorting prototype. Iterated the system around reliability, cost, power, and manufacturability rather than optimizing any one subsystem in isolation.</p>
-            <div class="tags">
-              <span class="tag">Microcontrollers</span><span class="tag">Sensors</span><span class="tag">Servo control</span><span class="tag">Power electronics</span><span class="tag">System integration</span>
-            </div>
-          </article>
+        <div class="foundation-grid" id="foundation">
+          <article class="foundation-module heartbeat-module reveal-item" aria-labelledby="heartbeat-title"><header><span class="module-id">LAB.SIGNAL / 04</span><h3 id="heartbeat-title">Heartbeat → Class-D</h3></header><div class="scope" aria-label="Animated heartbeat signal path"><div class="scope-grid"></div><svg viewBox="0 0 640 160" role="img" aria-label="Heartbeat waveform passing through signal conditioning and PWM stages"><path class="scope-trace" d="M0 82 H75 L87 78 L96 84 L108 81 L118 82 L128 44 L141 119 L154 68 L168 82 H236 L250 79 L262 85 L275 81 L284 82 L296 44 L309 119 L322 68 L338 82 H410 L421 79 L432 85 L445 82 L455 44 L467 119 L480 68 L495 82 H640"></path></svg><div class="scope-labels"><span>ANALOG IN</span><span>DETECT</span><span>PWM</span><span>MOSFET</span><span>AUDIO OUT</span></div></div><p>Mixed-signal path from analog conditioning and heartbeat detection through PWM, break-before-make control, MOSFET switching, Class-D amplification, and real-time bench validation.</p><div class="tech-line"><span>Analog</span><span>PWM</span><span>Class-D</span><span>LTspice</span><span>Scope debug</span></div></article>
+          <article class="foundation-module research-module reveal-item" aria-labelledby="research-title"><header><span class="module-id">LAB.EXPERIMENT / 05</span><h3 id="research-title">Recommendation drift</h3></header><div class="experiment-viz" aria-label="Conceptual five-dataset recommendation experiment"><div class="axis-y"><span>DRIFT</span></div><div class="plot-bars" aria-hidden="true"><i style="--h:34%"></i><i style="--h:51%"></i><i style="--h:46%"></i><i style="--h:73%"></i><i style="--h:62%"></i></div><div class="plot-labels"><span>D1</span><span>D2</span><span>D3</span><span>D4</span><span>D5</span></div></div><p>Python pipelines, APIs, and custom scraping collected 10,000+ observations across five datasets for adversarial experiments on short-form recommendation drift.</p><div class="tech-line"><span>Python</span><span>APIs</span><span>Scraping</span><span>Experiment design</span></div></article>
+          <article class="foundation-module midi-module reveal-item" aria-labelledby="midi-title"><header><span class="module-id">LAB.LOGIC / 06</span><h3 id="midi-title">FPGA MIDI receiver</h3></header><div class="fsm-viz" aria-label="MIDI receiver state machine"><div class="fsm-node active">IDLE<small>start edge</small></div><i aria-hidden="true">→</i><div class="fsm-node">RX BYTE<small>31.25 kbaud</small></div><i aria-hidden="true">→</i><div class="fsm-node">PARSE<small>3 bytes</small></div><i aria-hidden="true">→</i><div class="fsm-node">EVENT<small>note on/off</small></div></div><p>Modular VHDL for UART receive, baud timing, byte assembly, and FSM-based MIDI parsing, verified with a self-checking Note On/Note Off simulation.</p><div class="module-actions"><div class="tech-line"><span>VHDL</span><span>UART</span><span>FSM</span><span>Testbench</span></div><a href="https://github.com/riti-singh/FPGA-MIDI-reciever" target="_blank" rel="noopener">Source ↗</a></div></article>
+          <article class="foundation-module maze-module reveal-item" aria-labelledby="maze-title"><header><span class="module-id">LAB.CONTROL / 07</span><h3 id="maze-title">Two-axis marble maze</h3></header><div class="maze-viz" aria-label="Joystick to STM32 to two-axis motor control"><span>JOYSTICK</span><i>ADC</i><strong>STM32C031</strong><i>STEP / DIR</i><span>X + Y MOTORS</span></div><p>Bare-metal embedded control translating two-axis joystick input into step/direction motor commands, with sensor-driven game states and UART diagnostics.</p><div class="module-actions"><div class="tech-line"><span>C</span><span>STM32</span><span>ADC</span><span>GPIO</span></div><a href="https://github.com/riti-singh/2x2-axis-tilt-maze" target="_blank" rel="noopener">Source ↗</a></div></article>
         </div>
       </div>
     </section>
 
-    <section id="skills" class="light-section">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Technical toolkit</div>
-            <h2 class="section-title">Breadth, organized around systems.</h2>
-          </div>
-          <p class="section-intro">The skills section now matches the story the projects tell: software + systems, embedded + digital hardware, testing, and data/AI.</p>
-        </div>
+    <section class="about-section observed-section" id="about" aria-labelledby="about-title" data-section="about"><div class="section-shell about-layout"><header class="section-heading reveal-item"><p class="section-index">03 / OPERATING PRINCIPLE</p><h2 id="about-title">Understand the system.<br><em>Understand its users.</em></h2></header><div class="about-copy reveal-item"><p class="about-lead">I like understanding systems across abstraction layers.</p><p>My ECE background taught me to follow signals, timing, interfaces, and failure modes all the way down. Software and AI engineering extended the same instinct into APIs, data models, retrieval systems, evaluation, and the workflows around them.</p><p>I’m increasingly drawn to technically difficult problems where software must meet real users and real engineering systems—especially AI infrastructure, agentic systems, graph-based software, and forward-deployed engineering.</p></div><aside class="layer-stack reveal-item" aria-label="Technical layers"><div><span>L4</span><strong>AI SYSTEMS</strong><small>evaluation · retrieval · agents</small></div><div><span>L3</span><strong>SOFTWARE</strong><small>services · APIs · data</small></div><div><span>L2</span><strong>EMBEDDED</strong><small>control · firmware · digital logic</small></div><div><span>L1</span><strong>PHYSICAL</strong><small>signals · circuits · devices</small></div></aside></div><div class="toolchain" aria-label="Technical toolkit"><span>PYTHON</span><span>C / C++</span><span>FASTAPI</span><span>NEO4J</span><span>AWS</span><span>DOCKER</span><span>VHDL</span><span>STM32</span><span>PANDAS</span><span>LINUX</span><span>TESTING</span><span>GRAPH RETRIEVAL</span></div></section>
 
-        <div class="skills-grid">
-          <div class="skill-group reveal">
-            <h3>Languages</h3>
-            <p>Python · C/C++ · Bash · SQL · MATLAB · VHDL</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Systems &amp; Embedded</h3>
-            <p>Linux · STM32 · microcontrollers · PWM · ADC · timers/interrupts · UART · I²C · hardware-software integration</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Cloud &amp; Backend</h3>
-            <p>AWS · FastAPI · REST APIs · Boto3 · Lambda · CloudWatch · SQL/NoSQL</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Data &amp; AI</h3>
-            <p>GraphRAG · RAG · LLMs · knowledge graphs · Bedrock · SageMaker · Neptune · Neo4j · Pandas</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Digital Hardware</h3>
-            <p>FPGA design · finite-state machines · datapaths · UART logic · simulation · testbenches · timing verification</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Circuits &amp; Devices</h3>
-            <p>Analog signal conditioning · filters · PWM/Class-D · power electronics · semiconductor device analysis · LTspice</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Testing &amp; Reliability</h3>
-            <p>Test automation · production validation · edge-case testing · failure-mode analysis · system troubleshooting · measurement-driven debugging</p>
-          </div>
-          <div class="skill-group reveal">
-            <h3>Developer Tools</h3>
-            <p>Git · Jira · Confluence · gcc/make · gdb · documentation · technical presentation</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="about">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">About</div>
-            <h2 class="section-title">I like problems that cross boundaries.</h2>
-          </div>
-        </div>
-
-        <div class="about-grid">
-          <div class="about-copy reveal">
-            <p>I’m an Electrical &amp; Computer Engineering student at Dartmouth interested in systems where software, hardware, and real-world constraints all matter at once.</p>
-            <p>That has taken me from embedded control and FPGA design to analog signal processing, semiconductor devices, wireless test automation, and production AI systems. I’m most energized by work that requires both technical depth and the judgment to figure out what should actually be built.</p>
-          </div>
-          <div class="stats reveal" aria-label="Selected highlights">
-            <div class="stat"><strong>3.76</strong><span>Dartmouth GPA</span></div>
-            <div class="stat"><strong>95%</strong><span>projected workflow time + manual-effort reduction at EchoStar</span></div>
-            <div class="stat"><strong>12K+</strong><span>specification nodes connected in wireless engineering platform</span></div>
-            <div class="stat"><strong>2nd</strong><span>EchoStar company-wide Intern Innovation Competition</span></div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section id="education" class="light-section">
-      <div class="shell">
-        <div class="section-head reveal">
-          <div>
-            <div class="section-kicker">Education</div>
-            <h2 class="section-title">Dartmouth College</h2>
-          </div>
-          <p class="section-intro">Bachelor of Engineering in Electrical &amp; Computer Engineering · Expected June 2027</p>
-        </div>
-
-        <div class="education-card reveal">
-          <div>
-            <h3>Electrical &amp; Computer Engineering</h3>
-            <p>Relevant coursework: Embedded Systems · FPGA Design · Systems &amp; Controls · Linear Systems · Semiconductor / device-physics coursework</p>
-          </div>
-          <div class="gpa">GPA 3.76 / 4.00</div>
-        </div>
-      </div>
-    </section>
-
-    <section id="contact" class="contact">
-      <div class="shell reveal">
-        <div class="section-kicker">Contact</div>
-        <h2>Building something difficult? <span class="gradient-text">I’d like to hear about it.</span></h2>
-        <p>I’m interested in software, systems, embedded, hardware-adjacent, and engineering automation roles where I can own real technical problems and work across disciplines.</p>
-        <div class="contact-links">
-          <a class="button primary" href="mailto:riti.k.singh.27@dartmouth.edu">Email me</a>
-          <a class="button secondary" href="https://github.com/riti-singh" target="_blank" rel="noopener">GitHub ↗</a>
-          <a class="button secondary" href="https://www.linkedin.com/in/riti-k-singh/" target="_blank" rel="noopener">LinkedIn ↗</a>
-          <a class="button secondary" href="assets/resume/Riti_Singh_Resume_26F.pdf" target="_blank" rel="noopener">Resume ↗</a>
-        </div>
-      </div>
-    </section>
+    <section class="contact-section observed-section" id="contact" aria-labelledby="contact-title" data-section="contact"><div class="section-shell contact-layout"><div class="contact-terminal reveal-item"><div class="terminal-bar"><span>OUTPUT.CONSOLE</span><span>READY</span></div><p><span class="prompt">riti@portfolio:~$</span> next --problem</p><h2 id="contact-title">Building something technically difficult?</h2><p class="contact-copy">I’m looking for AI engineering, software engineering, AI infrastructure, agentic systems, graph systems, and forward-deployed work where technical depth has to become something people can actually use.</p><div class="contact-actions"><a class="signal-button primary" href="mailto:riti.k.singh.27@dartmouth.edu">Email Riti ↗</a><a class="signal-button" href="https://www.linkedin.com/in/riti-k-singh/" target="_blank" rel="noopener">LinkedIn ↗</a><a class="signal-button" href="https://github.com/riti-singh" target="_blank" rel="noopener">GitHub ↗</a><a class="signal-button" href="assets/resume/Riti_Singh_Resume_26F.pdf" target="_blank" rel="noopener">Resume ↗</a></div></div></div></section>
   </main>
 
-  <footer>
-    <div class="shell">Designed and built by Riti Singh.</div>
-  </footer>
-
-  <script>
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          entry.target.classList.add('visible');
-          observer.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.08 });
-
-    document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-  </script>
+  <footer class="site-footer"><div><span>RITI SINGH</span><span>ENGINEERED WITH HTML / CSS / JS</span></div><div><span>REV.2026.09</span><a href="https://github.com/riti-singh/riti-singh.github.io" target="_blank" rel="noopener">VIEW SOURCE ↗</a></div></footer>
+  <dialog class="command-menu" data-command-dialog aria-labelledby="command-title"><form method="dialog"><header><div><span>CMD.K</span><h2 id="command-title">Route through the system</h2></div><button value="cancel" aria-label="Close command menu">ESC</button></header><div class="command-list"><a href="#trajectory" data-command-link><span>01</span><strong>Trace the engineering path</strong><kbd>G P</kbd></a><a href="#systems" data-command-link><span>02</span><strong>Inspect selected systems</strong><kbd>G S</kbd></a><a href="#spectrace" data-command-link><span>03</span><strong>Open Spectrace</strong><kbd>G X</kbd></a><a href="#about" data-command-link><span>04</span><strong>Read operating principle</strong><kbd>G A</kbd></a><a href="#contact" data-command-link><span>05</span><strong>Make contact</strong><kbd>G C</kbd></a></div><p class="command-help">Press <kbd>/</kbd> anywhere to open this menu. Try <kbd>G</kbd> then <kbd>S</kbd>.</p></form></dialog>
 </body>
 </html>

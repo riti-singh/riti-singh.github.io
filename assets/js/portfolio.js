@@ -54,13 +54,13 @@
   }
 
   const copy = {
-    specs: 'Technical specifications enter as connected source context rather than isolated documents.',
-    graph: 'The knowledge graph preserves relationships between specifications, requirements, and test evidence.',
-    req: '606 device requirements become traceable engineering entities.',
-    tests: '728 test cases connect verification work back to the requirements they cover.',
-    retrieve: 'Graph-aware retrieval assembles context for technical analysis and failure investigation.',
-    reason: 'The reasoning layer works over retrieved engineering context, not disconnected text fragments.',
-    workflow: 'The output returns to engineers as a faster, more navigable workflow.'
+    specs: '12,000+ specification nodes provide the source material—and plenty of chances to retrieve the wrong passage.',
+    graph: 'The knowledge graph keeps the links among specifications, device requirements, and test evidence intact.',
+    req: '606 device requirements turn broad specifications into claims an engineer can inspect.',
+    tests: '728 test cases show how each requirement is verified, not merely where it is mentioned.',
+    retrieve: 'Search follows both text relevance and relationships; a plausible excerpt is not enough if its evidence trail is missing.',
+    reason: 'The model receives the relevant requirement, source specification, and test links instead of a pile of disconnected excerpts.',
+    workflow: 'Engineers get a shorter path from a question to the requirement and evidence behind the answer.'
   };
 
   document.querySelectorAll('[data-architecture]').forEach((architecture) => {
